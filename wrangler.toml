@@ -1,0 +1,14 @@
+name = "blog"
+type = "webpack"
+account_id = "48efe0f369d822f5035c1e179d993127"
+workers_dev = false
+route = "gaahrdner.com/*"
+zone_id = "6f13ec6af517b8ca2cab2edad5097ad0"
+
+[env.staging]
+name = "blog-staging"
+route = "staging.gaahrdner.com/*"
+
+[site]
+bucket = "public"
+entry-point = "workers-site"
