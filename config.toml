@@ -1,0 +1,18 @@
+baseURL = "https://gaahrdner.com"
+languageCode = "en-us"
+title = "Delirium"
+theme = "beautifulhugo"
+enableEmoji = true
+
+[Params]
+  logo = "/avatar.png"
+  rss = true
+  readingTime = true
+  wordCount = true
+  showRelatedPosts = true
+
+[Author]
+  name = "Phil Gardner"
+  github = "gaahrdner"
+  twitter = "gaahrdner"
+  linkedin = "gaahrdner"
