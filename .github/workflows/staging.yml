@@ -2,17 +2,30 @@ name: Deploy to Staging
 
 on:
   push:
-    branches:
-      - '!master'
+    branches-ignore:
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy
     steps:
       - uses: actions/checkout@v2
-      - name: Publish
+        with:
+          submodules: true
+          fetch-depth: 0
+          
+      - name: setup
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: build
+        run: hugo --environment staging --minify --buildDrafts
+
+      - name: publish
         uses: cloudflare/wrangler-action@1.2.0
+        env:
+          USER: root
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           environment: staging
