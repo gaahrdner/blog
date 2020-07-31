@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: setup
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: build
+        run: hugo --minify --buildDrafts
+
+      - name: publish
+        uses: cloudflare/wrangler-action@1.2.0
+        env:
+          USER: root
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
