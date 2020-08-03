@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "Delirium"
 theme = "beautifulhugo"
 enableEmoji = true
+enableGitInfo = true
+googleAnalytics = "UA-30931277-1"
 
 [Params]
   logo = "/avatar.png"

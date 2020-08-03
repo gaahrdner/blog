@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 date: 2020-07-30T18:24:08-05:00
-draft: true
+draft: false
 ---
 
 It's me, Phil.
