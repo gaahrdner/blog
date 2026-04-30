@@ -23,7 +23,7 @@ jobs:
         run: hugo --minify --buildDrafts
 
       - name: publish
-        uses: cloudflare/wrangler-action@1.2.0
+        uses: cloudflare/wrangler-action@v3.15
         env:
           USER: root
         with:
